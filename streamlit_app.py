@@ -19,7 +19,7 @@ from oci.generative_ai_inference.models import ChatDetails, TextContent, Message
 #tenancy=ocid1.tenancy.oc1..aaaaaaaahzmfodyyhz7vzcktsbkwazcu3ohadbwvwloi33v4gox5yty7kobq
 #region=sa-saopaulo-1
 #"""
-path = f"C:\\Temp\\oci_api_key.pem"
+path = f"C:\Temp\oci_api_key.pem"
 config = {
     "user": "ocid1.user.oc1..aaaaaaaa76r3gdkh6fxw44nsbq6hcqhyzjwbtgcnr5tyu6lpach5agwbykea",
     "key_file": path,
