@@ -6,10 +6,21 @@ Created on Tue Sep 17 11:19:19 2024
 """
 
 import streamlit as st
+import os
 import oci
 from oci.generative_ai_inference.models import ChatDetails, TextContent, Message, GenericChatRequest, OnDemandServingMode
 
 # Configuração OCI
+
+# A variável de ambiente já está configurada para o usuário atual
+
+# Inicializa o cliente OCI
+config_path = oci.config.from_env()  # Utiliza a variável de ambiente
+storage_client = oci.object_storage.ObjectStorageClient(config_path)
+# ...
+
+# Use o storage_client para interagir com o Object Storage
+
 
 #config_content = """
 #[DEFAULT]
@@ -19,10 +30,10 @@ from oci.generative_ai_inference.models import ChatDetails, TextContent, Message
 #tenancy=ocid1.tenancy.oc1..aaaaaaaahzmfodyyhz7vzcktsbkwazcu3ohadbwvwloi33v4gox5yty7kobq
 #region=sa-saopaulo-1
 #"""
-path = "C:\Temp\oci_api_key.pem"
+
 config = {
     "user": "ocid1.user.oc1..aaaaaaaa76r3gdkh6fxw44nsbq6hcqhyzjwbtgcnr5tyu6lpach5agwbykea",
-    "key_file": path,
+    "key_file": config_path,
     "fingerprint": "89:86:4b:1d:cc:d6:0e:26:b5:51:1b:da:dd:10:13:9d",
     "tenancy": "ocid1.tenancy.oc1..aaaaaaaahzmfodyyhz7vzcktsbkwazcu3ohadbwvwloi33v4gox5yty7kobq",
     "region": "sa-saopaulo-1"
